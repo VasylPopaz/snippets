@@ -1,3 +1,4 @@
+import { deleteSnippet } from "@/actions";
 import { db } from "@/db";
 import Link from "next/link";
 
@@ -19,6 +20,9 @@ const SnippetShowPage = async ({ params }: SnippetShowPageProps) => {
       </h1>
     );
   }
+
+  const deleteSnippetAction = deleteSnippet.bind(null, snippet.id);
+
   return (
     <>
       <div className="p-4 flex justify-between items-center">
@@ -30,9 +34,11 @@ const SnippetShowPage = async ({ params }: SnippetShowPageProps) => {
           >
             Edit
           </Link>
-          <button type="button" className="primary-btn [100px]">
-            Delete
-          </button>
+          <form action={deleteSnippetAction}>
+            <button type="submit" className="primary-btn [100px]">
+              Delete
+            </button>
+          </form>
         </div>
       </div>
       <pre className="p-3 border rounded bg-gray-200 border-gray-200">
