@@ -30,6 +30,7 @@ const SnippetCreatePage = () => {
             name="title"
             id="title"
             className="border-2 rounded p-2 w-full outline-none focus-visible:border-purple-500"
+            required
           />
         </div>
         <div className="flex gap-4">

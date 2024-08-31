@@ -20,7 +20,11 @@ const SnippetEditPage = async ({ params }: SnippetEditPageProps) => {
       </h1>
     );
   }
-  return <div></div>;
+  return (
+    <div>
+      <SnippetEditForm snippet={snippet} />
+    </div>
+  );
 };
 
 export default SnippetEditPage;
