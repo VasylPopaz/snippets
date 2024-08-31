@@ -14,13 +14,13 @@ const SnippetCreatePage = () => {
       },
     });
     console.log(snippet);
-    
+
     redirect("/");
   };
 
   return (
     <form action={createSnippet}>
-      <h3 className="font-bold m-3">Create a Snippet</h3>
+      <h3 className="font-bold py-3">Create a Snippet</h3>
       <div className="flex flex-col gap-4">
         <div className="flex gap-4">
           <label className="w-12" htmlFor="title">
@@ -45,7 +45,7 @@ const SnippetCreatePage = () => {
         </div>
         <button
           type="submit"
-          className="rounded p-2 bg-purple-500 text-white hover:bg-purple-800 focus-visible:bg-purple-800 transition duration-300"
+          className="rounded p-2 bg-purple-500 text-white hover:bg-purple-800 focus-visible:bg-purple-800"
         >
           Create
         </button>
