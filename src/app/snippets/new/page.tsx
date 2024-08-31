@@ -13,7 +13,6 @@ const SnippetCreatePage = () => {
         code,
       },
     });
-    console.log(snippet);
 
     redirect("/");
   };

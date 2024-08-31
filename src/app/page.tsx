@@ -16,8 +16,7 @@ const Home = async () => {
     </li>
   ));
   return (
-    <div>
-      Home{" "}
+    <>
       <div className="flex py-2 justify-between items-center">
         <h1 className="text-xl font-bold">Snippets</h1>{" "}
         <Link href="/snippets/new" className="primary-btn">
@@ -25,7 +24,7 @@ const Home = async () => {
         </Link>
       </div>
       <ul className="space-y-2">{renderedSnippets}</ul>
-    </div>
+    </>
   );
 };
 export default Home;

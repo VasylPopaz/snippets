@@ -1,4 +1,5 @@
 import { db } from "@/db";
+import Link from "next/link";
 
 interface SnippetShowPageProps {
   params: {
@@ -19,13 +20,16 @@ const SnippetShowPage = async ({ params }: SnippetShowPageProps) => {
     );
   }
   return (
-    <div>
+    <>
       <div className="p-4 flex justify-between items-center">
         <h2 className="text-xl font-bold">{snippet.title}</h2>
         <div className="flex gap-4">
-          <button type="button" className="primary-btn w-[100px]">
+          <Link
+            href={`/snippets/${snippet.id}/edit`}
+            className="primary-btn w-[100px]"
+          >
             Edit
-          </button>
+          </Link>
           <button type="button" className="primary-btn [100px]">
             Delete
           </button>
@@ -34,7 +38,7 @@ const SnippetShowPage = async ({ params }: SnippetShowPageProps) => {
       <pre className="p-3 border rounded bg-gray-200 border-gray-200">
         <code>{snippet.code}</code>
       </pre>
-    </div>
+    </>
   );
 };
 
