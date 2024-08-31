@@ -14,6 +14,7 @@ const SnippetCreatePage = () => {
       },
     });
     console.log(snippet);
+    
     redirect("/");
   };
 
