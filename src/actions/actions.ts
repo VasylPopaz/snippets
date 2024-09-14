@@ -1,6 +1,7 @@
 "use server";
 
 import { db } from "@/db";
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export const createSnippet = async (
@@ -32,6 +33,7 @@ export const createSnippet = async (
       return { message: "Something went wrong..." };
     }
   }
+  revalidatePath("/");
   redirect("/");
 };
 
@@ -42,10 +44,14 @@ export const editSnippet = async (id: number, code: string) => {
       code,
     },
   });
+
+  revalidatePath(`/snippets/${id}`);
   redirect(`/snippets/${id}`);
 };
 
 export const deleteSnippet = async (id: number) => {
   await db.snippet.delete({ where: { id } });
+
+  revalidatePath("/");
   redirect("/");
 };
